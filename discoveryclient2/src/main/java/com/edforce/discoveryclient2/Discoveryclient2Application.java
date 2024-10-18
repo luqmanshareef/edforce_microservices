@@ -1,14 +1,13 @@
-package com.edforce.order;
+package com.edforce.discoveryclient2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-public class OrderApplication {
+public class Discoveryclient2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderApplication.class, args);
+		SpringApplication.run(Discoveryclient2Application.class, args);
 	}
 
 }

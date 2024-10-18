@@ -3,6 +3,7 @@ package com.edforce.order.service;
 import com.edforce.order.entity.Order;
 import com.edforce.order.entity.OrderRequest;
 import com.edforce.order.entity.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +13,10 @@ import java.util.ArrayList;
 @Service
 public class OrderService {
 
-    private final String PROD_SERVICE_URL = "http://localhost:8081/";
+    private final String PROD_SERVICE_URL = "http://productservice/";
+
+    @Autowired
+    RestTemplate restTemplate;
 
     public Order placeOrder(OrderRequest orderRequest){
 
@@ -27,7 +31,7 @@ public class OrderService {
         String getProductUrl = PROD_SERVICE_URL + "api/products/" + orderRequest.getProdId();
 
         System.out.println("URL " + getProductUrl);
-        RestTemplate restTemplate = new RestTemplate();
+
         ResponseEntity<Product> prodResponse = restTemplate.getForEntity(getProductUrl, Product.class);
 
         Product product = prodResponse.getBody();

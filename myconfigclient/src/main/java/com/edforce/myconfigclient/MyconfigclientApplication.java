@@ -1,14 +1,13 @@
-package com.edforce.order;
+package com.edforce.myconfigclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-public class OrderApplication {
+public class MyconfigclientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderApplication.class, args);
+		SpringApplication.run(MyconfigclientApplication.class, args);
 	}
 
 }
